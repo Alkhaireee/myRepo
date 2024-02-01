@@ -1,0 +1,84 @@
+// main.scss
+@import 'variables';
+@import 'mixins';
+
+body {
+    font-family: $font-family;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: $deep-pink;
+    color: $white;
+    font-family: $font-family;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+
+    .column {
+        flex: 1;
+        margin: 0 10px;
+        background-color: $whitesmoke;
+        padding: 20px;
+        border-radius: 6px;
+        color: black;
+
+        h2 {
+            height: 50px;
+            font-size: 24px;
+            color: $deep-pink;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            font-weight: bolder;
+        }
+
+        p {
+            font-size: 20px;
+            font-style: italic;
+            line-height: 1.5;
+        }
+
+        button {
+            @include button-styles;
+        }
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: $deep-pink;
+    color: $white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+// Media queries...
+@media screen and (min-width: 768px) and (max-width: 991px) {
+    .column {
+        flex: 48%;
+        margin: 0 0 10px 0;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1199px) {
+    .column {
+        flex: 48%;
+        margin: 0 0 10px 0;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .column {
+        flex: 30%;
+        margin: 0 0 10px 0;
+    }
+}
